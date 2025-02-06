@@ -11,8 +11,16 @@ const NewToDo: React.FC<NewToDoProps> = (props) => { // hier define the type
   const toDoSubmitHandler = (event: React.FormEvent) => {
     event.preventDefault();
     const enteredText = textInputRef.current!.value;
-    console.log(enteredText);
-    props.onAddToDo(enteredText);
+    //if (enteredText === '' || ' '){
+    if(enteredText.trim().length === 0){
+        alert('Enter something!');
+    }
+    else {
+        props.onAddToDo(enteredText);
+        if(textInputRef.current){
+            textInputRef.current.value = '';
+        }
+    }
   };
 
   return (

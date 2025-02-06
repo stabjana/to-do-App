@@ -18,13 +18,17 @@ const App: React.FC = () => {
       return prevTodos.filter((todo)=> todo.id !== todoId);
     })
   }
+
+  const toEditHandler = () => {
+    
+  }
  
   return (
     <div className="App">
       <h1>To do app</h1>
       <NewToDo onAddToDo={todoAddHandler}/>
       {/* A component that will add todos */}
-      <ToDoList items={todos} onDeleteToDo={toDoDeleteHandler}/> {/* instad of passing it here we need to recieve the props in the to do list file */}
+      <ToDoList items={todos} onDeleteToDo={toDoDeleteHandler} onEditToDo={toEditHandler}/> {/* instad of passing it here we need to recieve the props in the to do list file */}
     </div>
   );
 };
