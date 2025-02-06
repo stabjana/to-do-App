@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import './newToDo.css'
 
 type NewToDoProps = {
     onAddToDo: (todoText: string) => void; // function type
