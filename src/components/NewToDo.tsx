@@ -11,7 +11,7 @@ const NewToDo: React.FC<NewToDoProps> = (props) => { // hier define the type
   const toDoSubmitHandler = (event: React.FormEvent) => {
     event.preventDefault();
     const enteredText = textInputRef.current!.value;
-    //if (enteredText === '' || ' '){
+
     if(enteredText.trim().length === 0){
         alert('Enter something!');
     }
@@ -27,7 +27,7 @@ const NewToDo: React.FC<NewToDoProps> = (props) => { // hier define the type
     <form onSubmit={toDoSubmitHandler}>
       <div>
         <label htmlFor="toDoText"> ToDo Text </label>
-        <input type="text" id="todo-text" ref={textInputRef} />
+        <input type="text" id="todo-text" ref={textInputRef} name="text" autoFocus/>
       </div>
       <button type="submit"> Add ToDo </button>
     </form>
